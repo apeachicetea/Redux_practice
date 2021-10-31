@@ -7,6 +7,7 @@ import Home from './Home';
 import Detail from './Detail'
 import { Link, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import Cart from './Cart';
 
 
 
@@ -39,6 +40,7 @@ function App() {
         <Navbar.Brand><Link to="/" className="link">Apeachicetea</Link></Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link><Link to="/detail" className="link">Detail</Link></Nav.Link>
+          <Nav.Link><Link to="/cart" className="link">Cart</Link></Nav.Link>
         </Nav>
         </Container>
       </Navbar> 
@@ -71,49 +73,15 @@ function App() {
         <Route path="/detail/:id">
           <Detail shoes={ shoes } 재고={ 재고 } 재고변경={ 재고변경 } />
         </Route>
+      
+        <Route path="/cart">
+          <Cart />
+        </Route>
+  
       </Switch>
 
 
       
-      
-
-
-
-      
-          {/* <div className="col-md-4">
-            <img src="https://codingapple1.github.io/shop/shoes1.jpg"/>
-            <h4>{ shoes[0].title }</h4>
-            <p>{ shoes[0].content } & { shoes[0].price }</p>
-          </div>
-          <div className="col-md-4">
-            <img src="https://codingapple1.github.io/shop/shoes2.jpg"/>
-            <h4>{ shoes[1].title }</h4>
-            <p>{ shoes[1].content } & { shoes[1].price }</p>
-          </div>
-          <div className="col-md-4">
-            <img src="https://codingapple1.github.io/shop/shoes3.jpg"/>
-            <h4>{ shoes[2].title }</h4>
-            <p>{ shoes[2].content } & { shoes[2].price }</p>
-          </div> */}
-
-        {/* <List shoes={ shoes[0] } />
-        <List shoes={ shoes[1] } />
-        <List shoes={ shoes[2] } /> */}
-
-        {/* {
-
-          shoes.map((el, i) => {
-            return (
-              <List shoes={ shoes[i] } />
-            );
-          })
-
-        } */}
-
-        {/* { Lists } */}
-
-     
-
 
     </div>
   );

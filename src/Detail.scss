@@ -1,0 +1,37 @@
+$빨간색 : #ff0000;
+
+.red {
+  color: $빨간색;
+}
+
+.my-alert {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.my-alert-green {
+  @extend .my-alert;
+  background-color: green;
+}
+
+.my-alert-yellow {
+  @extend .my-alert;
+  background-color: yellow;
+}
+
+.wow-enter {
+  opacity: 0;
+}
+
+.wow-enter-active {
+  opacity: 1;
+  transition: all 500ms;
+}

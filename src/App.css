@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: #eee;
+  margin: auto;
+  padding: 30px;
+  background-image: url(./background.jpeg);
+  background-size: cover;
+}
+
+.jumbotron button {
+  background-color: rgb(41, 217, 230);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.container2 {
+  margin-top: 100px;
+}
+
+.container2 img {
+  width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+
+

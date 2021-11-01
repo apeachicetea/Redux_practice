@@ -35,12 +35,24 @@ function reducer(state = 초기값, 액션) {
                 
 
   if(액션.type === '수량증가') {
-    let 카피본 = [...초기값];
-    카피본[0].quan++;
-    return 카피본;
+    
+    let found = state.findIndex((el)=>{ return el.id === 액션.데이터.id });
+
+    if( found >= 0) {
+      let 카피본 = [...초기값];
+      카피본[found].quan++;
+      return 카피본;
+
+    } else {
+      let 카피본 = [...초기값];
+      카피본[액션.payload].quan++;
+      return 카피본;
+    }
+    
+    
   } else if(액션.type === '수량감소'){
     let 카피본2 = [...초기값];
-    카피본2[0].quan--;
+    카피본2[액션.payload].quan--;
     return 카피본2;
   } else {
     return state;

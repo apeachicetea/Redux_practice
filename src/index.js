@@ -25,7 +25,15 @@ let 초기값 =  [
 ];
 
 function reducer(state = 초기값, 액션) {
-                //default parameter 
+                //default parameter
+  if( 액션.type === '항목추가' ) {
+    let 카피본 = [...초기값];
+    카피본.push(액션.payload);
+    return 카피본;
+  }                
+  
+                
+
   if(액션.type === '수량증가') {
     let 카피본 = [...초기값];
     카피본[0].quan++;

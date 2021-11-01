@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import './Detail.scss';
 import axios from 'axios';
 import { CSSTransition } from "react-transition-group";
+import { connect } from 'react-redux';
 
 
 
@@ -65,6 +66,10 @@ function Detail(props) {
             let newArray = [...props.재고];
             newArray = [9, 10, 11];
             props.재고변경(newArray);
+
+            props.dispatch({ type : '항목추가', payload : { id : 2, name : '새로운상품', quan : 1 } });
+            history.push('/cart');
+
           }}>주문하기</button>
           <Button variant="success" onClick={() => { 
             history.goBack();
@@ -115,4 +120,12 @@ function Info(props) {
   );
 }
 
-export default Detail;
+
+function state를props화(state){
+  console.log(state);
+  return {
+    state : state.reducer
+  }
+}
+
+export default connect(state를props화)(Detail);

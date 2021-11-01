@@ -22,22 +22,37 @@ function Cart(props) {
                   <td>{ el.id }</td>
                   <td>{ el.name }</td>
                   <td>{ el.quan }</td>
-                  <td>변경</td>
+                  <td>
+                    <button onClick={()=>{ props.dispatch({ type : '수량증가' })}}>+</button>
+                    <button onClick={()=>{ props.dispatch({ type : '수량감소' })}}>-</button>
+                  </td>
                 </tr>
               )
             })
           }
         </tbody>
     </Table>
+
+    { 
+      props.alert열렸니 === true
+      ? (<div className="my-alert2">
+      <p>지금 구매하면 신규할인 20%</p>
+      <button onClick={()=>{ props.dispatch({ type : '닫힘' })}}>닫기</button>
+    </div>)
+      : null
+    }      
+
+
   </div>
   )
 }
 
 
 function state를props화(state){
+  console.log(state);
   return {
-    state : state
-  //state라는 이름의 props로 바꿔준다는 의미
+    state : state.reducer,
+    alert열렸니 : state.reducer2
   }
 }
 
